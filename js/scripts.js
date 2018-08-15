@@ -16,27 +16,28 @@ $(document).ready(function() {
 
     var userOriginal = $("input#userInput").val().toLowerCase();
     userOriginal = userOriginal.split(" ");
-    console.log(userOriginal);
-    var vowels = ["a", "e", "i", "o", "u"];
+    // console.log(userOriginal);
+    // var vowels = ["a", "e", "i", "o", "u"];
     var pigLatin = [];
 
     for(var j = 0; j < userOriginal.length; j++) {
       var word = userOriginal[j];
       var letter = word.slice(0,1);
+
+      loop2:
         for (var i = 0; i < vowels.length; i++) {
         if (letter === vowels[i]) {
-          console.log(letter);
-          var result = word + "way";
-           console.log(result);
-           pigLatin.push(result);
-         $(".translated").text(pigLatin.join(" "));
+        var resultVowel = word + "way";
+             pigLatin.push(resultVowel);
+              console.log(pigLatin);
+                  // break loop2;
+          } else {
+            var resultConsonant = word + "ay";
+         pigLatin.push(resultConsonant);
        }
-         // break;
-       // } else {letter === vowels[i]
-
-       // consonant use case
-       // $(".translated").text(userInside);
+         console.log(pigLatin);
+     $(".translated").text(pigLatin.join(" "));
+      }
      }
-    }
-  });
-});
+   });
+ });
