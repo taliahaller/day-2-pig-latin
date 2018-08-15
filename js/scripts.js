@@ -14,19 +14,25 @@ $(document).ready(function() {
   $("#pig-latin").submit(function(event) {
     event.preventDefault();
 
-    var userOriginal = $("input#userInput").val();
+    var userOriginal = $("input#userInput").val().toLowerCase();
+    userOriginal = userOriginal.split(" ");
+    console.log(userOriginal);
     var vowels = ["a", "e", "i", "o", "u"];
-    var userInside = userOriginal.slice(0,1);
+    var pigLatin = [];
 
-      for (var i = 0; i < vowels.length; i++) {
-      if (userInside === vowels[i]) {
-        console.log(vowels[i]);
-        console.log(userInside);
-        var result = userOriginal + "way";
-         console.log(result);
-       $(".translated").text(result);
-       break;
-     } else {userInside === vowels[i]
+    for(var j = 0; j < userOriginal.length; j++) {
+      var word = userOriginal[j];
+      var letter = word.slice(0,1);
+        for (var i = 0; i < vowels.length; i++) {
+        if (letter === vowels[i]) {
+          console.log(letter);
+          var result = word + "way";
+           console.log(result);
+           pigLatin.push(result);
+         $(".translated").text(pigLatin.join(" "));
+       }
+         // break;
+       // } else {letter === vowels[i]
 
        // consonant use case
        // $(".translated").text(userInside);
