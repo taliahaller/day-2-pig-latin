@@ -12,19 +12,17 @@
   </head>
   <body>
     <div class="container">
-      <h1>Leap year detector</h1>
-
-      <form id="leap-year">
+      <h1>Pig Latin Translator</h1>
+      <form id="pig-latin">
         <div class="form-group">
-          <label for="year">Enter a year and find out if it's a leap year:</label>
-          <input id="year" type="text">
+          <label for="userInput">Enter a sentence and have it translated to Pig Latin:</label>
+          <input id="userInput" type="text">
         </div>
-
-        <button type="submit" class="btn">Find out!</button>
+        <button type="submit" class="btn btn-primary">Find out!</button>
       </form>
 
       <div id="result">
-        <p><span class="year"></span> is <span class="not"></span> a leap year.</p>
+        <p>Your sentence is: <span class="translated"></span>.</p>
       </div>
     </div>
   </body>
